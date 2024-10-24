@@ -1,0 +1,17 @@
+CREATE DATABASE rule_engine_db;
+
+\c rule_engine_db;
+
+CREATE TABLE rules (
+    rule_id SERIAL PRIMARY KEY,
+    rule_ast JSONB,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE user_attributes (
+    user_id SERIAL PRIMARY KEY,
+    age INT,
+    department VARCHAR(100),
+    salary INT,
+    experience INT);
